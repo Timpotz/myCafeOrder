@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="228dp"
+        android:layout_height="166dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/app_logo" />
+
+
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Username"
+        android:inputType="text"
+        android:background="#FFA500"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="40dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:background="#FFA500"/>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginEnd="40dp"
+        android:text="Login"
+        />
+
+    <TextView
+        android:id="@+id/textViewSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp"
+        android:text="Don't have an account? Sign up"
+        android:textColor="@color/white"
+        />
+
+</RelativeLayout>
