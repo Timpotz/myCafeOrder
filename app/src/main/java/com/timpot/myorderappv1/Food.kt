@@ -1,37 +1,14 @@
-import android.os.Parcel
-import android.os.Parcelable
+package com.timpot.myorderappv1
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Food(
     val imageResId: Int,
     val name: String,
     val description: String,
-    var quantity: Int = 0
-) : Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readInt(),
-        parcel.readString() ?: "",
-        parcel.readString() ?: "",
-        parcel.readInt()
-    )
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(imageResId)
-        parcel.writeString(name)
-        parcel.writeString(description)
-        parcel.writeInt(quantity)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<Food> {
-        override fun createFromParcel(parcel: Parcel): Food {
-            return Food(parcel)
-        }
-
-        override fun newArray(size: Int): Array<Food?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
+    var price: Int = 0,
+    var quantity: Int = 0,
+    var totalPerItem: Int =0
+) : Parcelable

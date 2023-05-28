@@ -1,6 +1,5 @@
 package com.timpot.myorderappv1
 
-import Food
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,14 +11,18 @@ class OrderedItemsAdapter(private val orderedItems: List<Food>) :
     RecyclerView.Adapter<OrderedItemsAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val imageFood: ImageView = itemView.findViewById(R.id.imageFood)
+        private val imageFood: ImageView = itemView.findViewById(R.id.imageFoodOrder)
         private val textFoodName: TextView = itemView.findViewById(R.id.textFoodName)
         private val textQuantity: TextView = itemView.findViewById(R.id.textQuantity)
+        private val textPrice: TextView = itemView.findViewById(R.id.tv_prices)
+        private val textTotalPrice: TextView = itemView.findViewById(R.id.tvTotalPricePerItem)
 
         fun bind(food: Food) {
             imageFood.setImageResource(food.imageResId)
             textFoodName.text = food.name
             textQuantity.text = food.quantity.toString()
+            textPrice.text = food.price.toString()
+            textTotalPrice.text = food.totalPerItem.toString()
         }
     }
 

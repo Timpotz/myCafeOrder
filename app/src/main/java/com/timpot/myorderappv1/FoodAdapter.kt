@@ -1,15 +1,15 @@
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.timpot.myorderappv1.Food
 
 import com.timpot.myorderappv1.R
 
-class FoodAdapter(private val foodList: List<Food>,private val orderedItems: MutableList<Food>) :
+class FoodAdapter(private val foodList: List<Food>, private val orderedItems: MutableList<Food>) :
     RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -18,6 +18,7 @@ class FoodAdapter(private val foodList: List<Food>,private val orderedItems: Mut
         val textFoodDescription: TextView = itemView.findViewById(R.id.textFoodDescription)
         val buttonMinus: ImageButton = itemView.findViewById(R.id.buttonMinus)
         val textQuantity: TextView = itemView.findViewById(R.id.textQuantity)
+        val textPrice: TextView = itemView.findViewById(R.id.tv_prices)
         val buttonPlus: ImageButton = itemView.findViewById(R.id.buttonPlus)
     }
 
@@ -31,6 +32,7 @@ class FoodAdapter(private val foodList: List<Food>,private val orderedItems: Mut
         holder.imageFood.setImageResource(food.imageResId)
         holder.textFoodName.text = food.name
         holder.textFoodDescription.text = food.description
+        holder.textPrice.text = food.price.toString()
         holder.textQuantity.text = food.quantity.toString()
 
         holder.buttonMinus.setOnClickListener {
@@ -53,7 +55,7 @@ class FoodAdapter(private val foodList: List<Food>,private val orderedItems: Mut
     fun setOrderedItems() {
         foodList.forEach { item ->
             if (item.quantity > 0)
-                orderedItems.add(Food(item.imageResId, item.name, item.description, item.quantity))
+                orderedItems.add(Food(item.imageResId, item.name, item.description, item.price, item.quantity, item.quantity * item.price))
         }
     }
 

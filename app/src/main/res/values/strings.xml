@@ -5,4 +5,9 @@
     <string name="zero">0</string>
     <string name="add">-</string>
     <string name="place_order">Place Order</string>
+    <string name="food_name">Food Name</string>
+    <string name="food_description">Food Description</string>
+    <string name="currency">Rp</string>
+    <string name="price">20_000</string>
+    <string name="check_out">Check Out</string>
 </resources>
