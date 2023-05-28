@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.system.exitProcess
 
 class OrderFoodActivity : AppCompatActivity() {
     private lateinit var buttonOrder: Button
@@ -38,11 +39,12 @@ class OrderFoodActivity : AppCompatActivity() {
 
         val buttonPlaceOrder = findViewById<Button>(R.id.buttonOrder)
         buttonPlaceOrder.setOnClickListener {
+            // set ordered food item
+            foodAdapter.setOrderedItems()
+
             // Get the list of ordered items
             val orderedItemsList = foodAdapter.getOrderedItems()
-
-            // Add the ordered items to the existing list
-            orderedItems.addAll(orderedItemsList)
+            println(orderedItemsList)
 
             // Start the OrderSummaryActivity and pass the ordered items
             val intent = Intent(this, OrderSummaryActivity::class.java)

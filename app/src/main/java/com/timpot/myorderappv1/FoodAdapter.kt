@@ -49,6 +49,14 @@ class FoodAdapter(private val foodList: List<Food>,private val orderedItems: Mut
     override fun getItemCount(): Int {
         return foodList.size
     }
+
+    fun setOrderedItems() {
+        foodList.forEach { item ->
+            if (item.quantity > 0)
+                orderedItems.add(Food(item.imageResId, item.name, item.description, item.quantity))
+        }
+    }
+
     fun getOrderedItems(): List<Food> {
         return orderedItems.toList()
     }
